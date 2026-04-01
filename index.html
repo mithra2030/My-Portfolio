@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K G Mithra | Personal Portfolio</title>
+    <!-- Google Fonts for a soft, elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Sparkles Canvas -->
+    <canvas id="sparkles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-brand">Mithra<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in-section">
+        <div class="hero-content glass-hero">
+            <p class="greeting">Hello, I am</p>
+            <h1 class="name">K G Mithra</h1>
+            <h2 class="role">Computer Science Student <span class="divider">|</span> Aspiring Java Developer</h2>
+            <p class="tagline">"Building intelligent solutions with code and creativity 🌸"</p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary btn-soft-glow">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="fade-in-section section-padding">
+        <div class="container">
+            <h2 class="section-title">About Me ✨</h2>
+            <div class="about-content">
+                <div class="about-text glass-card">
+                    <p>I am a highly motivated Computer Science student currently pursuing my B.Tech at MITS with a core passion for software development. With a strong academic background (CGPA: 8.86), I thrive on translating theoretical knowledge into highly efficient, scalable, and impactful solutions.</p>
+                    <p>My technical journey involves building full-stack applications, utilizing machine learning algorithms, and continually refining my architectural mindset. Whether fixing complex bugs or building new features, I approach challenges meticulously to forge reliable and elegant codebases.</p>
+                    <a href="#" class="btn btn-text">Download Resume <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="fade-in-section section-padding light-bg">
+        <div class="container">
+            <h2 class="section-title">Education 🎓</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-float">
+                        <h3>B.Tech - Computer Science Engineering</h3>
+                        <p class="timeline-subtitle">Madanapalle Institute of Technology & Science (MITS)</p>
+                        <p class="timeline-detail">CGPA: <span class="highlight">8.86</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-float">
+                        <h3>Intermediate</h3>
+                        <p class="timeline-subtitle">Board of Intermediate Education</p>
+                        <p class="timeline-detail">Percentage: <span class="highlight">95.4%</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-float">
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="timeline-subtitle">Board of Secondary Education</p>
+                        <p class="timeline-detail">Percentage: <span class="highlight">80.3%</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section id="experience" class="fade-in-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Professional Experience 💼</h2>
+            <div class="grid-3">
+                <div class="card glass-card hover-float">
+                    <i class="fas fa-laptop-code card-icon"></i>
+                    <h3>Web Development Intern</h3>
+                    <h4>LabMentix</h4>
+                    <p>Developed dynamic and responsive web applications, integrating elegant front-end designs with robust backend functionalities.</p>
+                </div>
+                <div class="card glass-card hover-float">
+                    <i class="fas fa-server card-icon"></i>
+                    <h3>Full Stack Intern</h3>
+                    <h4>Digital Blinc</h4>
+                    <p>Designed end-to-end architectures, actively participating in rapid development cycles and RESTful API integrations.</p>
+                </div>
+                <div class="card glass-card hover-float">
+                    <i class="fab fa-java card-icon"></i>
+                    <h3>Java Intern</h3>
+                    <h4>CodSoft</h4>
+                    <p>Implemented complex object-oriented patterns in Java to design highly scalable algorithms and optimized business logic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in-section section-padding light-bg">
+        <div class="container">
+            <h2 class="section-title">My Skills 🌸</h2>
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h3 class="skill-title"><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-pulse">C</span>
+                        <span class="skill-tag skill-pulse">Java</span>
+                        <span class="skill-tag skill-pulse">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title"><i class="fas fa-globe"></i> Web Dev</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-pulse">HTML5</span>
+                        <span class="skill-tag skill-pulse">CSS3</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title"><i class="fas fa-brain"></i> Core Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-pulse">DSA (Basics)</span>
+                        <span class="skill-tag skill-pulse">OOPS</span>
+                        <span class="skill-tag skill-pulse">DBMS</span>
+                        <span class="skill-tag skill-pulse">OS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-title"><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-pulse">Power BI</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Projects & Work ✨</h2>
+            <div class="grid-2">
+                <!-- Project 1 -->
+                <div class="project-card glass-card hover-float">
+                    <div class="project-info">
+                        <h3>Job Offer Classifier</h3>
+                        <p class="tag">Machine Learning</p>
+                        <p class="project-desc">Engineered an AI-driven classification module to automatically parse and evaluate incoming job offers, drastically reducing manual analysis time using advanced heuristics and ML logic.</p>
+                        <a href="#" class="btn btn-outline btn-sm">View Repository</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card hover-float">
+                    <div class="project-info">
+                        <h3>AI-Based Timetable Generator</h3>
+                        <p class="tag">Artificial Intelligence</p>
+                        <p class="project-desc">Developed a scheduling algorithm utilizing AI logic to mitigate schedule clashes. Evaluates multiple resource constraints simultaneously to output high-efficiency organizational timetables.</p>
+                        <a href="#" class="btn btn-outline btn-sm">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Leadership Section -->
+    <section id="achievements" class="fade-in-section section-padding light-bg">
+        <div class="container">
+            <h2 class="section-title">Accolades & Leadership 🏆</h2>
+
+            <div class="grid-2">
+                <div class="achievement-group glass-card hover-float">
+                    <h3><i class="fas fa-medal"></i> Hackathons & Certifications</h3>
+                    <ul class="clean-list">
+                        <li><strong>Hackathons:</strong> IMPACTX 2K25, SIH 2K25</li>
+                        <li><strong>NPTEL Certifications:</strong> Python, Power BI, Gen AI</li>
+                    </ul>
+                </div>
+
+                <div class="achievement-group glass-card hover-float">
+                    <h3><i class="fas fa-users"></i> Leadership & Activities</h3>
+                    <ul class="clean-list">
+                        <li><strong>Class Representative:</strong> Leading organizational functions and acting as a bridge between faculty and students.</li>
+                        <li><strong>Session Host:</strong> Organized and hosted interactive coding sessions to uplift peer technical capabilities.</li>
+                        <li><strong>Extracurricular:</strong> Karate Yellow Belt practitioner; Active participant in Dance and cultural activities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Let's Connect 💌</h2>
+            <p class="contact-subtitle">I'd love to hear from you!</p>
+
+            <div class="contact-wrapper glass-card">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:k.g.mithra30@gmail.com">k.g.mithra30@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:6309776095">+91 6309776095</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-circle"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="#" target="_blank">Connect on LinkedIn</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-soft-glow">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 K G Mithra. Made with 💖 and code.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

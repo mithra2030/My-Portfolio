@@ -1,0 +1,668 @@
+/* ==========================================================
+   K.G. MITHRA | "Dark Girly" Neon Pastel Portfolio 🌙🌸
+   ========================================================== */
+
+/* --- CSS Variables (Dark Pastel Theme) --- */
+:root {
+  --bg-color: #120417;         /* Very dark plum/purple black */
+  --bg-surface: #1e0b29;       /* Dark purple surface */
+  --bg-card: rgba(36, 15, 48, 0.7); /* Dark Glassmorphism */
+  
+  --accent-pink: #ff3385;      /* Hot Neon Pink */
+  --accent-light: #ff7eb3;     /* Glowing light pink */
+  
+  --text-main: #fcfcfc;        /* Off white */
+  --text-muted: #d8b4e2;       /* Pastel lavender/purple */
+  
+  --font-heading: 'Playfair Display', serif; /* Elegant Serif */
+  --font-body: 'Nunito', sans-serif;         /* Soft Sans */
+  
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --glow-shadow: 0 10px 20px rgba(255, 51, 133, 0.3);
+  --soft-shadow: 0 8px 30px rgba(255, 51, 133, 0.15);
+}
+
+/* --- Base Reset & Setup --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Soft Bubby Load */
+  animation: softLoad 1.2s ease-out forwards;
+}
+
+/* Custom Soft Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-pink);
+}
+
+/* --- Reusables & Utilities --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.light-bg {
+  background-color: var(--bg-surface);
+}
+
+.highlight {
+  color: var(--accent-pink);
+  font-weight: 700;
+}
+
+/* Glassmorphism Classes (Dark & Soft) */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 126, 179, 0.15);
+  border-radius: 20px; /* Highly rounded for girly aesthetic */
+  padding: 30px;
+  box-shadow: var(--soft-shadow);
+  transition: var(--transition);
+}
+
+/* Headings */
+h1, h2, h3, h4, .nav-brand {
+  font-family: var(--font-heading);
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  letter-spacing: 1px;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-light));
+  margin: 15px auto 0;
+  border-radius: 10px;
+  box-shadow: var(--glow-shadow);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 30px; /* Pill-shaped buttons */
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-light));
+  color: #fff;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 51, 133, 0.5);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent-light);
+  border: 2px solid var(--accent-pink);
+}
+.btn-outline:hover {
+  background-color: var(--accent-pink);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 51, 133, 0.4);
+}
+
+.btn-sm {
+  padding: 10px 25px;
+  font-size: 0.85rem;
+}
+
+.btn-text {
+  color: var(--accent-light);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.btn-text:hover {
+  color: var(--accent-pink);
+  text-shadow: 0 0 10px rgba(255, 51, 133, 0.6);
+  transform: translateX(5px);
+}
+
+/* --- Layout Grids --- */
+.grid-2, .grid-3 {
+  display: grid;
+  gap: 30px;
+}
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* --- Particles Canvas --- */
+#sparkles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Navigation --- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+nav.scrolled {
+  background: rgba(18, 4, 23, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 5%;
+  border-bottom: 1px solid rgba(255, 126, 179, 0.15);
+  box-shadow: var(--soft-shadow);
+}
+nav.scrolled .nav-links li a {
+  color: var(--text-main);
+}
+nav.scrolled .hamburger i {
+  color: var(--accent-pink);
+}
+
+.nav-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  letter-spacing: 1px;
+}
+.nav-brand span {
+  color: var(--accent-pink);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.nav-links li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: var(--transition);
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: var(--accent-pink);
+  bottom: -6px;
+  left: 0;
+  border-radius: 3px;
+  transition: var(--transition);
+}
+.nav-links li a:hover {
+  color: var(--accent-light);
+}
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-pink);
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(255, 51, 133, 0.15) 0%, transparent 70%);
+}
+
+.glass-hero {
+  z-index: 2;
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(36, 15, 48, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 126, 179, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.greeting {
+  font-size: 1.3rem;
+  color: var(--accent-light);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #ff7eb3, #ff3385, #d8b4e2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pastelPulse 4s infinite alternate;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 25px;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+.role .divider {
+  color: var(--accent-pink);
+  margin: 0 10px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* --- About Section --- */
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* --- Education Timeline --- */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: rgba(255, 126, 179, 0.3);
+  border-radius: 3px;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 40px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: 12.5px;
+  top: 25px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--accent-pink);
+  box-shadow: 0 0 10px rgba(255, 51, 133, 0.6);
+}
+.timeline-content h3 {
+  margin-bottom: 5px;
+  color: var(--accent-light);
+}
+.timeline-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.timeline-detail {
+  font-size: 1rem;
+}
+
+/* --- Experience Grid --- */
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--accent-light);
+  margin-bottom: 20px;
+  display: inline-block;
+  background: var(--bg-surface);
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 51, 133, 0.2);
+}
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.card h4 {
+  color: var(--accent-pink);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Skills --- */
+.skill-category {
+  margin-bottom: 30px;
+  background: rgba(36, 15, 48, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+.skill-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skill-title i {
+  color: var(--accent-pink);
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.skill-tag {
+  background: rgba(255, 51, 133, 0.1);
+  color: var(--accent-light);
+  border: 1px solid rgba(255, 126, 179, 0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: default;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.skill-tag:hover {
+  background: var(--accent-pink);
+  color: #fff;
+  border-color: var(--accent-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 51, 133, 0.5);
+}
+
+/* --- Projects --- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+.project-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--text-main);
+}
+.tag {
+  display: inline-block;
+  background: rgba(255, 51, 133, 0.15);
+  color: var(--accent-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.project-desc {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* --- Achievements --- */
+.clean-list {
+  list-style: none;
+  margin-top: 20px;
+}
+.clean-list li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-main);
+}
+.clean-list li::before {
+  content: '🌸';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px rgba(255, 126, 179, 0.5);
+}
+.achievement-group h3 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--bg-surface);
+  padding-bottom: 15px;
+}
+.achievement-group h3 i {
+  color: var(--accent-pink);
+  margin-right: 10px;
+}
+
+/* --- Contact --- */
+.contact-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 51, 133, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  font-size: 1.2rem;
+  box-shadow: inset 0 0 10px rgba(255, 126, 179, 0.2);
+}
+.contact-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+.contact-item a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.contact-item a:hover {
+  color: var(--accent-light);
+  text-shadow: 0 0 5px rgba(255, 126, 179, 0.5);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 126, 179, 0.2);
+  padding: 15px 20px;
+  color: var(--text-main);
+  border-radius: 15px;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-light);
+  box-shadow: 0 0 15px rgba(255, 51, 133, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background: var(--bg-surface);
+  border-top: 1px solid rgba(255, 126, 179, 0.2);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+footer p {
+  font-weight: 600;
+}
+
+/* ==========================================================
+   Girly Custom Animations & Effects
+   ========================================================== */
+
+/* 1. Soft Float Hover Effect */
+.hover-float {
+  position: relative;
+  overflow: hidden;
+}
+.hover-float:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 51, 133, 0.2);
+  border-color: rgba(255, 126, 179, 0.5);
+}
+
+/* 2. Pastel Text Glow */
+@keyframes pastelPulse {
+  0% { transform: scale(1); text-shadow: 0 0 10px rgba(255, 51, 133, 0.4); }
+  100% { transform: scale(1.02); text-shadow: 0 0 25px rgba(255, 126, 179, 0.8), 0 0 50px rgba(255, 51, 133, 0.4); }
+}
+
+/* 3. Soft Load / Scroll Fade */
+@keyframes softLoad {
+  0% { opacity: 0; transform: translateY(20px); filter: blur(5px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .name { font-size: 3.5rem; }
+  .role { font-size: 1.2rem; }
+  
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(18, 4, 23, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .section-title { font-size: 2rem; }
+  .glass-hero { background: rgba(36, 15, 48, 0.7); border: 1px solid rgba(255,51,133,0.3); }
+}
