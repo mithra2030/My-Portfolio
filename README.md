@@ -36,6 +36,7 @@ A passionate B.Tech student interested in Java development, problem-solving, and
 
 ## 🔗 Live Demo
 👉 https://mithraportfolio0.netlify.app/
+👉 https://mithra2030.github.io/My-Portfolio/
 
 ---
 
