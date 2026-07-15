@@ -40,10 +40,6 @@ A passionate B.Tech student interested in Java development, problem-solving, and
 
 ---
 
-## 📬 Contact
-- Email: your-email@example.com  
-- LinkedIn: https://linkedin.com/in/your-profile  
-- GitHub: https://github.com/your-username  
 
 ---
 
